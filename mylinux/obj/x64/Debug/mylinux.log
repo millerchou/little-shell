@@ -1,0 +1,8 @@
+﻿  Validating architecture
+  Validating sources
+  Copying sources remotely to '192.168.125.128'
+  Starting remote build
+  Compiling sources:
+  varlib.c
+  Linking objects
+  mylinux.vcxproj -> C:\Users\stayt\Source\Repos\mylinux\mylinux\bin\x64\Debug\mylinux.out
