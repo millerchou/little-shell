@@ -35,6 +35,7 @@
     <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
     <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
     <LinuxProjectType>{D51BCBC9-82E9-4017-911E-C93873C4EA2B}</LinuxProjectType>
+    <ProjectName>littleshell</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
@@ -61,17 +62,15 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
-    <ClCompile Include="builtin.c" />
     <ClCompile Include="controlflow.c" />
     <ClCompile Include="execute.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="makefile" />
     <ClCompile Include="process.c" />
     <ClCompile Include="splitline.c" />
-    <ClCompile Include="varlib.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="smsh.h" />
-    <ClInclude Include="varlib.h" />
+    <ClInclude Include="ltlsh.h" />
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

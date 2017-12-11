@@ -1,66 +1,68 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include"smsh.h"
-char * next_cmd(char * prompt, FILE * fp) {
+#include"ltlsh.h"
+char * next_cmd(char * prompt, FILE * fp) { //输入保存为堆上字符串
 	char * buf;
-	int bufspace = 0;
+	int bufallsize = 0;
 	int pos = 0;
 	int c;
 
 	printf("%s", prompt);
 	while ((c = getc(fp)) != EOF) {
-		if (pos + 1 >= bufspace) {
-			if (bufspace == 0)
-				buf = emalloc(BUFSIZ);
-			else
-				buf = erealloc(buf, bufspace + BUFSIZ);
-			bufspace += BUFSIZ;
+		if (pos + 1 >= bufallsize) {		
+			if (bufallsize == 0)				
+				buf = emalloc(BUFSIZ);	
+			else							
+				buf = erealloc(buf, bufallsize + BUFSIZ);
+			bufallsize += BUFSIZ;
 		}
 		if (c == '\n')
 			break;
 		buf[pos++] = c;
 	}
-	if (c == EOF&&pos == 0)				//leak??
+	if (c == EOF && pos == 0) {	
+		free(buf);
 		return NULL;
+	}
 	buf[pos] = '\0';
 	return buf;
 }
 
-#define is_delim(x) ((x)==' '||(x)=='\t')
+#define is_space(x) ((x)==' '||(x)=='\t')
 
 char ** splitline(char * line) {
 	char * newstr();
-	char **args;
+	char **args;			//存储指针
 	int spots = 0;
-	int bufspace = 0;
+	int bufallsize = 0;
 	int argnum = 0;
-	char * cp = line;
+	char * tmp = line;
 	char * start;
 	int len;
 
 	if (line == NULL)
 		return NULL;
 
-	args = emalloc(BUFSIZ);
-	bufspace = BUFSIZ;
-	spots = BUFSIZ / sizeof(char*);
+	args = emalloc(BUFSIZ);		//分配指针空间
+	bufallsize = BUFSIZ;
+	spots = BUFSIZ / sizeof(char*);		//可存放指针数
 
-	while (*cp != '\0') {
-		while (is_delim(*cp))
-			cp++;
-		if (*cp == '\0')
+	while (*tmp != '\0') {
+		while (is_space(*tmp))
+			tmp++;
+		if (*tmp == '\0')
 			break;
 
 		if (argnum + 1 >= spots) {
-			args = erealloc(args, bufspace + BUFSIZ);	
-			bufspace += BUFSIZ;
+			args = erealloc(args, bufallsize + BUFSIZ);	
+			bufallsize += BUFSIZ;
 			spots += (BUFSIZ / sizeof(char*));
 		}
 
-		start = cp;
+		start = tmp;
 		len = 1;
-		while (*++cp != '\0' && !(is_delim(*cp)))
+		while (*++tmp != '\0' && !(is_space(*tmp)))
 			len++;
 		args[argnum++] = newstr(start, len);
 	}

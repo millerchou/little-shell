@@ -1,9 +1,7 @@
-C:\Users\stayt\Source\Repos\mylinux\mylinux\builtin.c|636473066601768916|~/projects/mylinux|
-C:\Users\stayt\Source\Repos\mylinux\mylinux\controlflow.c|636472047537688208|~/projects/mylinux|
-C:\Users\stayt\Source\Repos\mylinux\mylinux\execute.c|636473069914675376|~/projects/mylinux|
-C:\Users\stayt\Source\Repos\mylinux\mylinux\main.c|636473064116105087|~/projects/mylinux|
-C:\Users\stayt\Source\Repos\mylinux\mylinux\process.c|636472933366453080|~/projects/mylinux|
-C:\Users\stayt\Source\Repos\mylinux\mylinux\splitline.c|636471553419472779|~/projects/mylinux|
-C:\Users\stayt\Source\Repos\mylinux\mylinux\varlib.c|636473082522659064|~/projects/mylinux|
-C:\Users\stayt\Source\Repos\mylinux\mylinux\smsh.h|636472856896223731|~/projects/mylinux|
-C:\Users\stayt\Source\Repos\mylinux\mylinux\varlib.h|631655199420000000|~/projects/mylinux|
+C:\Users\stayt\Source\Repos\little-shell\mylinux\controlflow.c|636486216822830209|~/projects/littleshell|
+C:\Users\stayt\Source\Repos\little-shell\mylinux\execute.c|636486230838543443|~/projects/littleshell|
+C:\Users\stayt\Source\Repos\little-shell\mylinux\main.c|636486216823421754|~/projects/littleshell|
+C:\Users\stayt\Source\Repos\little-shell\mylinux\makefile|636486240158850401|~/projects/littleshell|
+C:\Users\stayt\Source\Repos\little-shell\mylinux\process.c|636486216823060785|~/projects/littleshell|
+C:\Users\stayt\Source\Repos\little-shell\mylinux\splitline.c|636486216823231225|~/projects/littleshell|
+C:\Users\stayt\Source\Repos\little-shell\mylinux\ltlsh.h|636485975712687304|~/projects/littleshell|

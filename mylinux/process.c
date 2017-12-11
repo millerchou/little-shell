@@ -1,7 +1,7 @@
 #include<stdio.h>
-#include"smsh.h"
-int is_control_command(char*);
-int do_control_command(char**);
+#include"ltlsh.h"
+int is_control_command(char*);//ÊÇshell¿ØÖÆÃüÁîÂğ	
+int do_control_command(char**);//Ö´ĞĞshell¿ØÖÆÃüÁî
 int ok_to_execute();
 int process(char ** args) {
 	int rv = 0;
@@ -10,7 +10,6 @@ int process(char ** args) {
 	else if (is_control_command(args[0]))
 		rv = do_control_command(args);
 	else if (ok_to_execute())
-		if(!builtin_command(args,&rv))
-			rv = execute(args);
+		rv = execute(args);
 	return rv;
 }

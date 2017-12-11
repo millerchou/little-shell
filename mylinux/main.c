@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<unistd.h>
 #include<signal.h>
-#include"smsh.h"
+#include"ltlsh.h"
 #define DEL_PROMPT ">"
 int main()
 {
@@ -22,8 +22,6 @@ int main()
 	return 0;
 }
 void setup() {
-	extern char ** environ;
-	VLenviron2table(environ);
 	signal(SIGINT, SIG_IGN);
 	signal(SIGQUIT, SIG_IGN);
 }

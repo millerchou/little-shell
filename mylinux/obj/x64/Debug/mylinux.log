@@ -1,8 +1,21 @@
-﻿  Validating architecture
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: 中间目录(C:\Users\stayt\Source\Repos\little-shell\mylinux\obj\x64\Debug\)包含从另一个项目(mylinux.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
+  Validating architecture
   Validating sources
   Copying sources remotely to '192.168.125.128'
   Starting remote build
   Compiling sources:
-  varlib.c
-  Linking objects
-  mylinux.vcxproj -> C:\Users\stayt\Source\Repos\mylinux\mylinux\bin\x64\Debug\mylinux.out
+  controlflow.c
+  execute.c
+  main.c
+  makefile
+  /root/.bashrc: line 5: ali: command not found
+  /root/projects/littleshell/makefile:1:5: 错误：found ‘:’ in nested-name-specifier, expected ‘::’
+   test: controlflow.c  ltlsh.h  splitline.c  /
+       ^
+  /root/projects/littleshell/makefile:1:1: 错误：‘test’不是一个类型名
+   test: controlflow.c  ltlsh.h  splitline.c  /
+   ^
+  
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Application Type\Linux\1.0\Linux.targets(259,5): error : g++ exited with code 1, please see the Output Window - Build output for more details (NOTE: the build output verbosity might need to be changed in Tools Options to see more information in the Output Window).
+  process.c
+  splitline.c

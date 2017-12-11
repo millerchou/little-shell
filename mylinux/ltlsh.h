@@ -2,7 +2,7 @@
 #define YES 1
 #define NO 0
 
-char*next_cmd(); //??
+char*next_cmd(); //读取下一个命令
 char**splitline(char *);
 void freelist(char **);
 void *emalloc(size_t);
